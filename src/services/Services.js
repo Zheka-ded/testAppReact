@@ -18,19 +18,18 @@ const Services = {
     /**
      * Добавление коммента к изображению
      */
-    // addComment: async function () {
+    addComment: async function () {
 
-    //     const res = await fetch(`${this._baseUrl}/comments/add/`, {
-    //         'method':'POST',
-    //         'headers': {
-    //             'accept': 'application/json',
-    //             'Content-Type': 'application/json',
-    //         },
-    //         'body': 'name=stringstringstring&description=stringstringstring&image_id=3'
-    //     })
-    //     return await res.json()
-    //     // return await this.getResource(`/comments/add${id}`)
-    // },
+        const res = await fetch(`${this._baseUrl}/comments/add/`, {
+            'method':'POST',
+            'headers': {
+                'accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            // 'body': '{"name":"stringё1","description":"string","image_id":3}',
+        })
+        return await res.json()
+    },
 
     /**
      * Все изображения
