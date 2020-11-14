@@ -1,0 +1,14 @@
+.ImageList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 768px;
+}
+
+.ImageList img{
+    width: 229px;
+    height: 142px;
+    margin: 15px 10px;
+    cursor: pointer;
+}

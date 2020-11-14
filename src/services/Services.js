@@ -18,7 +18,7 @@ const Services = {
     /**
      * Добавление коммента к изображению
      */
-    addComment: async function () {
+    addComment: async function (name, description, image_id) {
 
         const res = await fetch(`${this._baseUrl}/comments/add/`, {
             'method':'POST',
@@ -26,7 +26,7 @@ const Services = {
                 'accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            // 'body': '{"name":"stringё1","description":"string","image_id":3}',
+            'body': `{"name":"${name}","description":"${description}","image_id":${image_id}}`,
         })
         return await res.json()
     },
@@ -49,7 +49,24 @@ const Services = {
      * Получение списка комментов к изображению
      */
     getComments: async function (id) {
-        return await this.getResource(`/comments/${id}`)
+        const comment = await this.getResource(`/comments/${id}`)
+
+        return this._transformComments(comment, id);
+    },
+
+    /**
+     * Чуток переделать ответ сервера
+     */
+    _transformComments: function (comments, id) {
+        if (comments.detail) return [{
+            description: comments.detail,
+            name: '',
+            id: 0,
+            image_id: id,
+        }]; 
+        else {
+            return comments;
+        }
     },
 }
 

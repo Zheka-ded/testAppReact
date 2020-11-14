@@ -3,6 +3,7 @@ import './ImageList.css'
 import React, { useEffect, useState } from 'react';
 import Services from '../../services/Services';
 import Modal from '../modal/Modal';
+import Spinner from '../spinner/Spinner';
 
 export default function ImageList () {
 
@@ -31,7 +32,7 @@ export default function ImageList () {
             { img !== null ? (img.map((img) => <img key={img.image_id} 
                                                     src={img.src} 
                                                     alt={img.src}
-                                                    onClick={ () => handleClick(img.image_id, true) } /> )) : null }
+                                                    onClick={ () => handleClick(img.image_id, true) } /> )) : <Spinner/> }
         </div>
     )
 }

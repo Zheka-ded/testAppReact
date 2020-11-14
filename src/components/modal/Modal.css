@@ -2,17 +2,26 @@
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(235, 230, 230, 0.936);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .Modal{
     display: flex;
+    width: 619px;
+    background: rgb(255, 255, 255);
     flex-direction: column;
+    align-items: center;
 }
 
-.Modal__img{
-    width: 600px;
-    height: 400px;
+.Modal img{
+    width: 331px;
+    height: 205px;
+    cursor: default;
 }
