@@ -6,9 +6,16 @@
     max-width: 768px;
 }
 
-.ImageList img{
+.ImageList__img{
     width: 229px;
     height: 142px;
     margin: 15px 10px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 618px) {
+    .ImageList__img{
+        width: 280px;
+        height: 171px;
+    }
 }

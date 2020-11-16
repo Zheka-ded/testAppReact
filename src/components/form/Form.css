@@ -2,15 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 15px;
 }
 
 .Form__input{
+    border: 1px solid #CCCCCC;
     border-radius: 3px;
     margin: 10px 0px;
-    width: 324px;
+    width: 313px;
     height: 30px;
+    padding-left: 11px;
+}
+
+.Form__input:nth-child(1) {
+    margin-top: 29px;
 }
 
 .Form__input:nth-child(3) {
@@ -18,4 +22,30 @@
     color: #fff;
     border: none;
     background: #4997D0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.Form__input::placeholder{
+    color: #CCCCCC;
+}
+
+
+
+@media screen and (max-width: 618px) {
+    .Form{
+        align-self: center;
+        width: calc(100% - 40px)
+    }
+
+    .Form__input{
+        width: 100%;
+    }
+
+    .Form__input:nth-child(3){
+        width: calc(100% + 16px);
+        height: 36px;
+        margin-bottom: 48px;
+    }
+
 }
